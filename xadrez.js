@@ -300,23 +300,47 @@ function moverCavalo(pecaAnalisada, elementoDestino) {
     console.log("numVetorLinhaQuadrante: ", numVetorLinhaQuadrante);
     let permitirMovimento = false;
     if ( // valida o movimento do cavalo dois quadrantes para cima e um quadrante para esquerda
-        numVetorColunaQuadrante == (numVetorColunaPeca - 1) &&
-        numVetorLinhaQuadrante == (numVetorLinhaPeca - 2)
-    ) {
-        permitirMovimento = true;
-    } else if ( // valida o movimento do cavalo dois quadrantes para cima e um quadrante para direita
-        numVetorColunaQuadrante == (numVetorColunaPeca + 1) &&
-        numVetorLinhaQuadrante == (numVetorLinhaPeca - 2)
-    ) {
-        permitirMovimento = true;
-    } else if ( // valida o movimento do cavalo dois quadrantes para direita e um quadrante para cima
-        numVetorColunaQuadrante == (numVetorColunaPeca + 2) &&
-        numVetorLinhaQuadrante == (numVetorLinhaPeca - 1)
-    ) {
-        permitirMovimento = true;
-    }
-    return permitirMovimento;
+    numVetorColunaQuadrante == (numVetorColunaPeca - 1) &&
+    numVetorLinhaQuadrante == (numVetorLinhaPeca - 2)
+) {
+    permitirMovimento = true;
+} else if ( // valida o movimento do cavalo dois quadrantes para cima e um quadrante para direita
+    numVetorColunaQuadrante == (numVetorColunaPeca + 1) &&
+    numVetorLinhaQuadrante == (numVetorLinhaPeca - 2)
+) {
+    permitirMovimento = true;
+} else if ( // valida o movimento do cavalo dois quadrantes para direita e um quadrante para cima
+    numVetorColunaQuadrante == (numVetorColunaPeca + 2) &&
+    numVetorLinhaQuadrante == (numVetorLinhaPeca - 1)
+) {
+    permitirMovimento = true;
+} else if ( // valida o movimento do cavalo dois quadrantes para direita e um quadrante para baixo
+    numVetorColunaQuadrante == (numVetorColunaPeca + 2) &&
+    numVetorLinhaQuadrante == (numVetorLinhaPeca + 1)
+) {
+    permitirMovimento = true;
+} else if ( // valida o movimento do cavalo dois quadrantes para baixo e um quadrante para direita
+    numVetorColunaQuadrante == (numVetorColunaPeca + 1) &&
+    numVetorLinhaQuadrante == (numVetorLinhaPeca + 2)
+) {
+    permitirMovimento = true;
+} else if ( // valida o movimento do cavalo dois quadrantes para baixo e um quadrante para esquerda
+    numVetorColunaQuadrante == (numVetorColunaPeca - 1) &&
+    numVetorLinhaQuadrante == (numVetorLinhaPeca + 2)
+) {
+    permitirMovimento = true;
+} else if ( // valida o movimento do cavalo dois quadrantes para esquerda e um quadrante para baixo
+    numVetorColunaQuadrante == (numVetorColunaPeca - 2) &&
+    numVetorLinhaQuadrante == (numVetorLinhaPeca + 1)
+) {
+    permitirMovimento = true;
+} else if ( // valida o movimento do cavalo dois quadrantes para esquerda e um quadrante para cima
+    numVetorColunaQuadrante == (numVetorColunaPeca - 2) &&
+    numVetorLinhaQuadrante == (numVetorLinhaPeca - 1)
+) {
+    permitirMovimento = true;
 }
+return permitirMovimento;
 
 (function() { // execução em tempo real das linhas de código do bloco de função inominada
     document.onmousedown = handleMouseDown;
